@@ -15,11 +15,23 @@ const Search = ({ onSearchChange }) => {
         return fetch(
             `${GEO_API_URL}/cities?minpopulation=1000000&namePrefix=${inputValue}`, 
             geoApiOptions
-        )
+        )// remove consolelog to change in format input  
+        // return an  options parameter to return  an array of objects with value and labale props
+        //data needed to call api lat log, name etc
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response =>{
+        return {
+            options: response.data.map((city) => {
+                return {
+                    value: `${city.latitude} ${city.longitude}`,
+                    label: `${city.name} ${city.countryCode}`,
+                }
+            
+            })
+        }
+    })
 	.catch(err => console.error(err));
-    }
+    };
      //will retrieve data 
     const handleOnChange = (searchData) => {
         //use setsearch method to update seacr using searchdata
