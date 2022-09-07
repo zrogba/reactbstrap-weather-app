@@ -1,16 +1,14 @@
 .weather {
     width: 300px;
     border-radius: 6px;
-    box-shadow:  10px -2px 20px rgb(0 0 0 /12%);
+    box-shadow: 10px -2px 20px rgb(0 0 0 /12%);
     background-color: rgb(31, 31, 97);
-    margin:  20px auto 0 auto;
+    margin: 20px auto 0 auto;
     padding: 0 20px 20px 20px;
-
-
 }
-.top, 
-.bottom
-{
+
+.top,
+.bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,11 +61,11 @@
 }
 
 .parameter-value {
-     text-align: right;
+    text-align: right;
     font-weight: 400;
     font-size: 12px;
 }
 
 .parameter-label.top {
     border-bottom: 1px solid #fff;
-  }
+}
